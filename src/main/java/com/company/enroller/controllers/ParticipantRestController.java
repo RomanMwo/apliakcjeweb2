@@ -63,7 +63,9 @@ public class ParticipantRestController {
 			if (requestedParticipant == null) {
 				return new ResponseEntity(HttpStatus.NOT_FOUND);
 			}
+			
 			participantService.delete(requestedParticipant);
 			return new ResponseEntity<Participant>(requestedParticipant, HttpStatus.OK);
+			//heroku change see activity
 		}
 }
