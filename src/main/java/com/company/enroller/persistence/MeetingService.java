@@ -23,4 +23,18 @@ public class MeetingService {
 		return query.list();
 	}
 
+	public Meeting findById(long id)
+	{
+		// TODO Auto-generated method stub
+		return (Meeting) connector.getSession().get(Meeting.class, id);
+	}
+
+	public void addMeeting(Meeting meeting)
+	{
+		// TODO Auto-generated method stub
+		Transaction transaction = connector.getSession().beginTransaction();
+		connector.getSession().save(meeting);
+        transaction.commit();
+	}
+
 }
